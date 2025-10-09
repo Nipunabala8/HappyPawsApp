@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.happypawsapp.R
 
-data class DogProduct(
+data class PharmacyProduct(
     val name: String,
     val description: String,
     val price: String,
@@ -26,18 +26,18 @@ data class DogProduct(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DogProductsScreen(navController: NavHostController) {
-    val dogProducts = listOf(
-        DogProduct("Josera Mini Deluxe", "osera Mini Deluxe comes Without grains but full of vegetables, herbs and fruits along with a large portion of lamb", "$20.00", R.drawable.josera_mini_deluxe),
-        DogProduct("Josi Dog Active", "JosiDog Active is an energy packed dog food for adult active dogs", "$8.99", R.drawable.josi_dog_active),
-        DogProduct("Josidog Junior Sensitive", "Sensitive dogs from age eight weeks can enjoy real homestyle petfood with JosiDog Junior Sensitive!", "$25.50", R.drawable.josi_sentive),
-        DogProduct("Bavaro Junior", "Food for adult working and sports dogs of all breeds. Also perfect for puppies from the age of 2 months.", "$9.75", R.drawable.bavaro_junior)
+fun PharmacyScreen(navController: NavHostController) {
+    val pharmacyProducts = listOf(
+        PharmacyProduct("Trixie Flea and Tick Shampoo", "Flea and Tick Shampoo suitable for dogs from 12 weeks active", "$14.99", R.drawable.flea_and_tick_shampoo),
+        PharmacyProduct("Trixie Ear Care Wipes", "Ear Care Wipes for dogs, cats and other small animals with gentle cleaning lotion for regular care", "$9.99", R.drawable.ear_care_wipes),
+        PharmacyProduct("Cat Shampoo for Long Hair", "Cat Shampoo for Long Hair eases combing and prevents matts", "$7.49", R.drawable.cat_shampoo),
+        PharmacyProduct("Aluspray ", "Boost your pet’s immunity and vitality.", "$11.99", R.drawable.aluspray)
     )
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Dog Products") },
+                title = { Text("Pharmacy") },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -52,8 +52,8 @@ fun DogProductsScreen(navController: NavHostController) {
                 .padding(padding)
         ) {
             LazyColumn(modifier = Modifier.padding(16.dp)) {
-                items(dogProducts) { product ->
-                    DogProductCard(product.name, product.description, product.price, product.imageRes)
+                items(pharmacyProducts) { product ->
+                    PharmacyProductCard(product.name, product.description, product.price, product.imageRes)
                 }
             }
         }
@@ -61,7 +61,7 @@ fun DogProductsScreen(navController: NavHostController) {
 }
 
 @Composable
-fun DogProductCard(name: String, description: String, price: String, imageRes: Int) {
+fun PharmacyProductCard(name: String, description: String, price: String, imageRes: Int) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -91,4 +91,3 @@ fun DogProductCard(name: String, description: String, price: String, imageRes: I
         }
     }
 }
-

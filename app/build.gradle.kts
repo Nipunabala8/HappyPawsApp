@@ -41,7 +41,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
     implementation("androidx.activity:activity-compose:1.9.2")
     implementation("androidx.navigation:navigation-compose:2.9.5")
-
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.36.0")
 
     // Jetpack Compose BOM (manages versions automatically)
     implementation(platform("androidx.compose:compose-bom:2024.09.01"))
