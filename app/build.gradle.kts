@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.happypawsapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.happypawsapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
     }
@@ -40,6 +40,8 @@ dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
     implementation("androidx.activity:activity-compose:1.9.2")
+    implementation("androidx.navigation:navigation-compose:2.9.5")
+
 
     // Jetpack Compose BOM (manages versions automatically)
     implementation(platform("androidx.compose:compose-bom:2024.09.01"))
@@ -47,6 +49,7 @@ dependencies {
     // Jetpack Compose UI
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation(libs.androidx.compose.foundation.layout)
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
