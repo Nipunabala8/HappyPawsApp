@@ -7,13 +7,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -87,15 +85,19 @@ fun AppNavigation() {
 @Composable
 fun ModernBottomNavBar(navController: NavHostController) {
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination
-    val selectedColor = Color(0xFF00BFA5) // teal-pet tone
-    val unselectedColor = Color.Gray
+    val colorScheme = MaterialTheme.colorScheme
+
+    // Colors automatically adapt to light/dark mode
+    val containerColor = colorScheme.surface
+    val selectedColor = colorScheme.primary
+    val unselectedColor = colorScheme.onSurfaceVariant
 
     NavigationBar(
-        containerColor = Color.White,
+        containerColor = containerColor,
         tonalElevation = 8.dp,
         modifier = Modifier
             .shadow(12.dp, RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp))
-            .background(Color.White)
+            .background(containerColor)
     ) {
         bottomNavItems.forEach { item ->
             val selected = currentDestination?.route == item.route

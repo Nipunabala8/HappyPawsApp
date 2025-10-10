@@ -32,6 +32,7 @@ fun DogProductsScreen(navController: NavHostController) {
         DogProduct("Josi Dog Active", "JosiDog Active is an energy packed dog food for adult active dogs", "$8.99", R.drawable.josi_dog_active),
         DogProduct("Josidog Junior Sensitive", "Sensitive dogs from age eight weeks can enjoy real homestyle petfood with JosiDog Junior Sensitive!", "$25.50", R.drawable.josi_sentive),
         DogProduct("Bavaro Junior", "Food for adult working and sports dogs of all breeds. Also perfect for puppies from the age of 2 months.", "$9.75", R.drawable.bavaro_junior)
+
     )
 
     Scaffold(

@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-//  Light color scheme
+// Light color scheme
 private val LightColors = lightColorScheme(
     primary = primaryLight,
     onPrimary = onPrimaryLight,
@@ -27,7 +27,7 @@ private val LightColors = lightColorScheme(
     onError = onErrorLight
 )
 
-// Define your Dark color scheme
+// Dark color scheme
 private val DarkColors = darkColorScheme(
     primary = primaryDark,
     onPrimary = onPrimaryDark,
@@ -67,6 +67,7 @@ fun HappyPawsAppTheme(
         window.statusBarColor = Color.Transparent.value.toInt()
     }
 
+    // Apply Montserrat Typography
     MaterialTheme(
         colorScheme = colorScheme,
         typography = AppTypography,
